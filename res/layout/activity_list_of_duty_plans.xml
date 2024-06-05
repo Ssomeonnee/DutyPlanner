@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backgroundDP"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.gui.ListOfDutyPlansActivity">
+
+    <ImageView
+        android:id="@+id/exitToMenuDPButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cancelDPButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_blue"
+        app:cardCornerRadius="45dp"
+        app:cardElevation="10dp"
+        android:visibility="invisible"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:src="@drawable/cross" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/titleInSubMenuDP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ваши графики"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exitToMenuDPButton" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/light_blue"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleInSubMenuDP"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/arrowLeftMenuDP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="30dp"
+                        android:gravity="center|center_vertical"
+                        android:src="@drawable/arrow_left"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/monthNameTextMenuDP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toStartOf="@+id/arrowRightMenuDP"
+                        app:layout_constraintStart_toEndOf="@+id/arrowLeftMenuDP"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:id="@+id/arrowRightMenuDP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="30dp"
+                        android:src="@drawable/arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:id="@+id/cardView2MenuDP"
+                app:cardBackgroundColor="@color/light_blue"
+                android:layout_marginStart="145dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:cardUseCompatPadding="true">
+                <HorizontalScrollView
+                    android:id="@+id/datesScrollMenuDP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/datesTableMenuDP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TableLayout>
+
+                </HorizontalScrollView>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/planAndUsersScrollMenuDP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2MenuDP"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="50dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/light_blue">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:cardBackgroundColor="@color/light_blue">
+                        <HorizontalScrollView
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/usersTableCardViewMenuDP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="15dp">
+                                <TableLayout
+                                    android:id="@+id/usersTableMenuDP"
+                                    android:minHeight="50dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:stretchColumns="*">
+
+                                </TableLayout>
+                            </androidx.cardview.widget.CardView>
+                        </HorizontalScrollView>
+
+
+                        <HorizontalScrollView
+                            android:id="@+id/planScrollMenuDP"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:ignore="SpeakableTextPresentCheck">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/planTableCardViewMenuDP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="15dp">
+                                <TableLayout
+                                    android:id="@+id/planTableMenuDP"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                </TableLayout>
+                            </androidx.cardview.widget.CardView>
+                        </HorizontalScrollView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <Button
+                android:id="@+id/saveMenuDPButton"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/darkest_blue"
+                android:text="Сохранить"
+                android:textSize="22sp"
+                android:elevation="8dp">
+
+            </Button>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
